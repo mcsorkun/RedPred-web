@@ -2,7 +2,7 @@
 """
 Created on Sun Oct 18 14:54:37 2020
 
-@author: Cihan Yatbaz
+@author: Cihan Yatbaz, Elham Nour Gassemi
 """
 
 
@@ -12,18 +12,13 @@ Created on Sun Oct 18 14:54:37 2020
 
 
 from PIL import Image
-#from sklearn.neural_network import MLPRegressor
-#import predefined_models
 import base64
-
-
 import pandas as pd
 import streamlit as st
 import pickle
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from sklearn.ensemble import RandomForestRegressor
-#import xgboost as xgb
 
 #For KERAS
 import random
@@ -35,8 +30,6 @@ import time
 import numpy
 from sklearn.model_selection import GridSearchCV
 
-
-#import keras
 import tensorflow 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
@@ -68,8 +61,6 @@ def create_model(optimizer='RMSprop', learn_rate=0.1, momentum=0.4, activation='
 # Custom function
 ######################
 ## Calculate molecular descriptors
-
-
 
 def get_ecfc(smiles_list, radius=2, nBits=2048, useCounts=True):
     """
@@ -136,7 +127,7 @@ def generate(SMILES, verbose=False):
 #st.beta_set_page_config(page_title="AqSolPred: Online Solubility Prediction Tool")
 
 
-st.write("""# RedDB: RedDB ML Project""")
+st.write("""# RedPred: Redox Energy Prediction Tool """)
 
 image = Image.open('solubility-factors.png')
 st.image(image, use_column_width=False)
@@ -332,23 +323,20 @@ df_models # Skips the dummy first item
 about_part = st.beta_expander("About RedDB ML Project", expanded=False)
 with about_part:
     st.write("""
-                 AqSolPred is an highly accurate solubility prediction model that consists consensus of 3 ML algorithms (Neural Nets, Random Forest, and XGBoost). AqSolPred is developed using a quality-oriented data selection method described in [1] and trained on AqSolDB [2] largest publicly available aqueous solubility dataset.
+                RedPred is an reaction energy prediction model for redox flow battery molecules that consists consensus of 3 ML algorithms (Graph Conv Neural Nets, Random Forest, and Deep Neural Nets). 
+		
+		RedPred is trained on RedDB [1] publicly available redox flow battery candidate molecules dataset.
 
-                AqSolPred showed a top-performance (0.348 LogS Mean Absolute Error) on Huuskonen benchmark dataset [3].
+                RedPred showed a top-performance (0.XXX Hartree Mean Absolute Error) on test set.
                 
                 **version:** 1.0s (lite version of v1.0 described in the paper with reduced RFs(n_estimators=200,max_depth=10) but the same performance)
                 
-                If you are using the predictions from AqSolPred on your work, please cite these papers: [1, 2]
+                If you are using the predictions from RedPred on your work, please cite these papers: [1, 2]
                 
                 [1] Sorkun, M. C., Koelman, J.M.V.A. & Er, S. (2021). [Pushing the limits of solubility prediction via quality-oriented data selection](https://www.cell.com/iscience/fulltext/S2589-0042(20)31158-5), iScience, 24(1), 101961.
                 
                 [2] Sorkun, M. C., Khetan, A., & Er, S. (2019).  [AqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds](https://www.nature.com/articles/s41597-019-0151-1). Scientific data, 6(1), 1-8.
-                
-                [3] Huuskonen, J. Estimation of aqueous solubility for a diverse set of organic compounds based on molecular topology. Journal of Chemical Informationand Computer Sciences 40, 773–777 (2000).
-                
-                Special thanks: This web app is developed based on the tutorials and the template of [DataProfessor's repository](https://github.com/dataprofessor/code/tree/master/streamlit/part7). 
-                
-                                                                                                         
+                                                                                                                  
                 **Contact:** [Murat Cihan Sorkun](https://www.linkedin.com/in/murat-cihan-sorkun/)
                 
                 """)
@@ -367,6 +355,7 @@ with contacts:
              For any question you can contact us through email:
                  
              - [Murat Cihan Sorkun] (mailto:mcsorkun@gmail.com)
-             - [-] 
+             - [Cihan Yatbaz] (mailto:mcsorkun@gmail.com)
+	     - [Elham Nour Ghassemi] (mailto:mcsorkun@gmail.com)
              ''')
 
