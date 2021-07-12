@@ -5,7 +5,7 @@ channels:
 - defaults
 dependencies:
     - libgcc=5.2.0
-    - rdkit=2020.03.4
+    - rdkit
     - pip
     - pip:
         - streamlit==0.84.0
