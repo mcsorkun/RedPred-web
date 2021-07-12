@@ -1,10 +1,11 @@
 name: redpred
 channels:
+- rdkit
 - conda-forge
 - defaults
 dependencies:
     - libgcc=5.2.0
-    - rdkit
+    - rdkit=2020.03.4
     - pip
     - pip:
         - streamlit==0.84.0
