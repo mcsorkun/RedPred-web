@@ -334,8 +334,9 @@ with about_part:
 	     
 	     If you are using the predictions from RedPred on your work, please cite these papers: [1, 2]
 
-	     [1] Sorkun, M. C., Koelman, J.M.V.A. & Er, S. (2021). [Pushing the limits of solubility prediction via quality-oriented data selection](https://www.cell.com/iscience/fulltext/S2589-0042(20)31158-5), iScience, 24(1), 101961.
-	     [2] In preparation
+	     [1] Sorkun, Elif, et al. (2021). [RedDB, a computational database of electroactive molecules for aqueous redox flow batteries.](https://chemrxiv.org/engage/chemrxiv/article-details/60c7575f469df44a40f45465)
+	     
+	     [2] In preparation (will be updated soon)
 
 	     #### Developers
 
