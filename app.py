@@ -129,7 +129,7 @@ def generate(SMILES, verbose=False):
 
 st.write("""# RedPred: Redox Energy Prediction Tool """)
 
-image = Image.open('solubility-factors.png')
+image = Image.open('image1.jpg')
 st.image(image, use_column_width=False)
 
 
