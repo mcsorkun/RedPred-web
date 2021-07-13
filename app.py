@@ -140,7 +140,7 @@ st.image(image, use_column_width=True)
 st.sidebar.write('**Type SMILES below**')
 
 ## Read SMILES input
-SMILES_input = "CN1C=NC2=C1C(=O)N(C(=O)N2C)C\nCC(=O)OC1=CC=CC=C1C(=O)O"
+SMILES_input = "c1cc(O)cc(c12)cc(nn2)O\nOc1ccc(O)c(c12)cc(nn2)O"
 
 SMILES = st.sidebar.text_area('then press ctrl+enter', SMILES_input, height=20)
 SMILES = SMILES.split('\n')
