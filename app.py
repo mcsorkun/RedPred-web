@@ -180,7 +180,7 @@ ecfc_encoder = get_ecfc(SMILES)
 generated_dataset = generate(SMILES)
 
 ### transformer for gcn 
-filename = 'transformers.pkl'
+filename = 'final_models/transformers.pkl'
 infile = open(filename,'rb')
 transformers = pickle.load(infile)
 infile.close()
