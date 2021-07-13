@@ -187,9 +187,9 @@ infile.close()
 
 
 ## model for gcn 
-model_dir = 'tf_chp_initial'
+model_dir = 'final_models/tf_chp_initial'
 gcne_model = dc.models.GraphConvModel(n_tasks=1, batch_size=100, mode='regression', dropout=0.25,model_dir= model_dir,random_seed=0)
-gcne_model.restore('tf_chp_initial/ckpt-94/ckpt-197')
+gcne_model.restore('final_models/tf_chp_initial/ckpt-94/ckpt-197')
 #print(gcne_model)
 
 
