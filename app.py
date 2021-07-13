@@ -323,6 +323,7 @@ df_models # Skips the dummy first item
 about_part = st.beta_expander("About RedPred", expanded=False)
 with about_part:
     st.write("""
+    		#### About
                 RedPred is an reaction energy prediction model for redox flow battery molecules that consists consensus of 3 ML algorithms (Graph Conv Neural Nets, Random Forest, and Deep Neural Nets). 
 		
 		You can upload or type your SMILES used as a reactant in the redox reaction to get the reaction energy (Hartree).
@@ -338,6 +339,7 @@ with about_part:
                 [2] In preparation
 		
 		#### Developers
+		
 		- [Murat Cihan Sorkun](https://www.linkedin.com/in/murat-cihan-sorkun/)
                 - [Cihan Yatbaz] (https://www.linkedin.com/in/cihanyatbaz/)
 	        - [Elham Nour Ghassemi] (https://www.linkedin.com/in/elhamnourghassemi/)
@@ -351,7 +353,7 @@ with contacts:
              #### Report an Issue 
              
              You are welcome to report a bug or contribuite to the web 
-             application by filing an issue on [Github] x.
+             application by filing an issue on [Github] (https://github.com/mcsorkun/RedPred-web).
              
              #### Contact
              
