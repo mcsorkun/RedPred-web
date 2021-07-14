@@ -291,18 +291,18 @@ df_results=df_results.round(6)
 
 # df_results.to_csv("results/predicted-"+test_data_name+".csv",index=False)
 
-st.header('Predicted reaction_energy values')
+st.header('Predicted Reaction Energy (Hartree) ')
 df_results # Skips the dummy first item
 
 # download=st.button('Download Results File')
 # if download:
 csv = df_results.to_csv(index=False)
 b64 = base64.b64encode(csv.encode()).decode()  # some strings
-linko= f'<a href="data:file/csv;base64,{b64}" download="aqsolpred_predictions.csv">Download csv file</a>'
+linko= f'<a href="data:file/csv;base64,{b64}" download="redpred_predictions.csv">Download csv file</a>'
 st.markdown(linko, unsafe_allow_html=True)
  
 
-st.header('Model Performances')
+st.header('Individual Predictions')
 
 df_models = pd.DataFrame(SMILES, columns=['reactant_smiles'])
 
