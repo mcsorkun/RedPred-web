@@ -31,9 +31,9 @@ GIF
 
 ## Developers
 
-	     - Murat Cihan Sorkun: https://www.linkedin.com/in/murat-cihan-sorkun/
-	     - Cihan Yatbaz: https://www.linkedin.com/in/cihanyatbaz/
-	     - Elham Nour Ghassemi: https://www.linkedin.com/in/elhamnourghassemi/
+* Murat Cihan Sorkun: https://www.linkedin.com/in/murat-cihan-sorkun/
+* Cihan Yatbaz: https://www.linkedin.com/in/cihanyatbaz/
+* Elham Nour Ghassemi: https://www.linkedin.com/in/elhamnourghassemi/
       
       
 ------------------------------------------
