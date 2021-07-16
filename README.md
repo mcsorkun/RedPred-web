@@ -17,8 +17,25 @@ RedPred: Redox Energy Prediction Tool for Redox Flow Battery Molecules
 
   * [1] Sorkun, Elif, et al. (2021). RedDB, a computational database of electroactive molecules for aqueous redox flow batteries.
 
-* [2] In preparation (will be updated soon)
+  * [2] In preparation (will be updated soon)
+
+
+------------------------------------------
+## RedPred Web App
+
+* Link for the web app: https://share.streamlit.io/mcsorkun/redpred-web/main/app.py
+
+GIF
 
 ------------------------------------------
 
-* Link for the web app: https://share.streamlit.io/mcsorkun/redpred-web/main/app.py
+## Developers
+
+	     - [Murat Cihan Sorkun](https://www.linkedin.com/in/murat-cihan-sorkun/)
+	     - [Cihan Yatbaz] (https://www.linkedin.com/in/cihanyatbaz/)
+	     - [Elham Nour Ghassemi] (https://www.linkedin.com/in/elhamnourghassemi/)
+      
+      
+------------------------------------------
+
+
