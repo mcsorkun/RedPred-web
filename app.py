@@ -157,14 +157,15 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     # data
     SMILES=data["reactant_smiles"]  
-    
+
+    # About dataset
+    st.write('Data Dimensions: ' + str(data.shape[0]) + ' rows and ' + str(data.shape[1]) + ' columns.')
     
     data_expander = st.beta_expander("Explore the Dataset", expanded=False)
     with data_expander:
         st.dataframe(data)
 
-    # About dataset
-    st.write('Data Dimensions: ' + str(data.shape[0]) + ' rows and ' + str(data.shape[1]) + ' columns.')	
+	
 
 
 # st.header('Input SMILES')
