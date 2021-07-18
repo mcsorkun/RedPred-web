@@ -153,7 +153,6 @@ st.sidebar.write("""**Upload a file with a column named 'reactant_smiles'** (Max
 
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
-@st.cache
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     # data
