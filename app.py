@@ -163,6 +163,9 @@ if uploaded_file is not None:
     with data_expander:
         st.dataframe(data)
 
+    # About dataset
+    st.write('Data Dimensions: ' + str(data.shape[0]) + ' rows and ' + str(data.shape[1]) + ' columns.')	
+
 
 # st.header('Input SMILES')
 # SMILES[1:] # Skips the dummy first item
