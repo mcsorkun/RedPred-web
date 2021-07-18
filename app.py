@@ -150,7 +150,8 @@ SMILES = list(filter(None, SMILES))
 st.sidebar.write("""---------**OR**---------""")
 st.sidebar.write("""**Upload a file with a column named 'reactant_smiles'** (Max:2000)""")
 
-   
+
+@st.cache
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
