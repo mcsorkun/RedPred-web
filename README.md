@@ -3,7 +3,7 @@ RedPred: Redox Energy Prediction Tool for Redox Flow Battery Molecules
 
 ------------------------------------------
 
-## About RedPred Projetc:
+## About RedPred Project:
 
 * RedPred is an reaction energy prediction model for redox flow battery molecules that consists consensus of 3 ML algorithms (Graph Conv Neural Nets, Random Forest, and Deep Neural Nets).
 
