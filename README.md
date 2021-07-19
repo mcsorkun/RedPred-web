@@ -32,13 +32,10 @@ RedPred: Redox Energy Prediction Tool for Redox Flow Battery Molecules
 ## Developers
 
 * **Murat Cihan Sorkun :** [![](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/murat-cihan-sorkun/) 
-[![](https://img.shields.io/badge/Email-M.C.Sorkun%40differ.nl-red)](mailto:M.C.Sorkun@differ.nl) 
 
 * **Cihan Yatbaz :** [![](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cihanyatbaz/) 
-[![](https://img.shields.io/badge/Email-cihanyatbaz%40gmail.com-red)](mailto:cihanyatbaz@gmail.com) 
 
 * **Elham Nour Ghassemi :** [![](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/elhamnourghassemi/)
-[![](https://img.shields.io/badge/Email-elhamng%40gmail.com-red)](mailto:elhamng@gmail.com) 
       
       
 ------------------------------------------
