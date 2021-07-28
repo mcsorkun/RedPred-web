@@ -13,7 +13,7 @@ RedPred: Redox Energy Prediction Tool for Redox Flow Battery Molecules
 
 * The performance of the RedPred is 0.0036 Hartree MAE on the test set.
 
-* If you are using the predictions from RedPred on your work, please cite these papers: [1, 2]
+* If you are using the predictions from RedPred on your work, please cite these papers: [1, 2] 
 
   * [1] Sorkun, Elif, et al. (2021). RedDB, a computational database of electroactive molecules for aqueous redox flow batteries.
 
@@ -37,7 +37,8 @@ RedPred: Redox Energy Prediction Tool for Redox Flow Battery Molecules
 
 * **Elham Nour Ghassemi :** [![](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/elhamnourghassemi/)
       
-      
+
+
 ------------------------------------------
 
 
