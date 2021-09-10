@@ -10,6 +10,13 @@ Created on Sun Oct 18 14:54:37 2020
 # Import libraries
 ######################
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+
+import warnings
+warnings.filterwarnings("ignore")
+
+
 
 from PIL import Image
 import base64
@@ -148,7 +155,7 @@ SMILES = list(filter(None, SMILES))
 
 
 st.sidebar.write("""---------**OR**---------""")
-st.sidebar.write("""**Upload a file with a column named 'reactant_smiles'** (Max:2000)""")
+st.sidebar.write("""**Upload a file with a column named 'reactant_smiles'** (Max:1000)""")
 
 
 
@@ -163,17 +170,20 @@ if uploaded_file is not None:
     
     data_expander = st.beta_expander("Explore the Dataset", expanded=False)
     with data_expander:
-        st.dataframe(data)
+		
+        st.dataframe(data[0:1000])
 
-	
+
+
+
 
 
 # st.header('Input SMILES')
 # SMILES[1:] # Skips the dummy first item
 
-# Use only top 300
-if len(SMILES)>2000:
-    SMILES=SMILES[0:2000]
+# Use only top 1000
+if len(SMILES)>1000:
+    SMILES=SMILES[0:1000]
 	
 ## Calculate molecular descriptors
 ecfc_encoder = get_ecfc(SMILES)
@@ -296,8 +306,16 @@ df_results=df_results.round(6)
 
 # df_results.to_csv("results/predicted-"+test_data_name+".csv",index=False)
 
+
+# Results DF
+
 st.header('Predicted Reaction Energy (Hartree) ')
 df_results # Skips the dummy first item
+
+
+
+
+
 
 # download=st.button('Download Results File')
 # if download:
