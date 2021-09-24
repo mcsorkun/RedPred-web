@@ -347,7 +347,7 @@ about_part = st.beta_expander("About RedPred", expanded=False)
 with about_part:
     st.write('''
 	     #### About
-	     RedPred is an reaction energy prediction model for redox flow battery molecules that consists ensemble of 3 ML algorithms (Graph Conv Neural Nets, Random Forest, and Deep Neural Nets). 
+	     RedPred is an reaction energy prediction model for redox flow battery molecules that consists ensemble of 3 ML algorithms (Graph Conv Neural Nets, Deep Neural Nets, and Random Forest). 
 	     
 	     You can upload or type your SMILES used as a reactant in the redox reaction to get the reaction energy (Hartree).
 	     
