@@ -155,7 +155,7 @@ SMILES = list(filter(None, SMILES))
 
 
 st.sidebar.write("""---------**OR**---------""")
-st.sidebar.write("""**Upload a file with a column named 'reactant_smiles'** (Max:1000)""")
+st.sidebar.write("""**Upload a csv file with a column named 'reactant_smiles'** (Max:1000)""")
 
 
 
@@ -330,7 +330,7 @@ st.header('Individual Predictions')
 df_models = pd.DataFrame(SMILES, columns=['reactant_smiles'])
 
 df_models["GCN"]=pred_gcne
-df_models["Keras"]=pred_keras
+df_models["DNN"]=pred_keras
 df_models["RF"]=pred_rf
 df_models=df_models.round(5)
 
