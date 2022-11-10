@@ -7,8 +7,7 @@ dependencies:
     - libgcc=5.2.0
     - rdkit
     - pip
-    - pip:
-        - scikit-learn==0.22.2.post1
+    - pip:        
         - streamlit==1.12.0
         - pandas==1.0.3
         - numpy==1.16
@@ -16,3 +15,5 @@ dependencies:
         - keras==2.4.3
         - deepchem==2.4.0
         - mordred
+        - scikit-learn==0.22.2.post1
+        
