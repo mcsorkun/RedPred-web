@@ -8,8 +8,8 @@ dependencies:
     - rdkit
     - pip
     - pip:
-        - streamlit==1.12.0
         - scikit-learn==0.22.1
+        - streamlit==1.12.0
         - pandas==1.0.3
         - numpy==1.16
         - tensorflow==2.3.2
