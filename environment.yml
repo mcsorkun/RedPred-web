@@ -9,11 +9,10 @@ dependencies:
     - pip
     - pip:        
         - streamlit==1.12.0
+        - scikit-learn
+        - mordred
         - pandas==1.0.3
         - numpy==1.16
         - tensorflow==2.3.2
         - keras==2.4.3
         - deepchem==2.4.0
-        - mordred
-        - scikit-learn
-        
