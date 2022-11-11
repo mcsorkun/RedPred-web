@@ -168,7 +168,7 @@ if uploaded_file is not None:
     # About dataset
     st.write('Data Dimensions: ' + str(data.shape[0]) + ' rows and ' + str(data.shape[1]) + ' columns.')
     
-    data_expander = st.beta_expander("Explore the Dataset", expanded=False)
+    data_expander = st.expander("Explore the Dataset", expanded=False)
     with data_expander:
 		
         st.dataframe(data[0:1000])
@@ -343,7 +343,7 @@ df_models # Skips the dummy first item
 #%%
 # About PART
 
-about_part = st.beta_expander("About RedPred", expanded=False)
+about_part = st.expander("About RedPred", expanded=False)
 with about_part:
     st.write('''
 	     #### About
@@ -370,7 +370,7 @@ with about_part:
 	''')
 
 
-contacts = st.beta_expander("Contact", expanded=False)
+contacts = st.expander("Contact", expanded=False)
 with contacts:
     st.write('''
              #### Report an Issue 
