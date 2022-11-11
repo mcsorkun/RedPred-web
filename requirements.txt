@@ -3,7 +3,7 @@ rdkit==2022.9.1
 scikit-learn==0.22.1
 mordred==1.2.0
 pandas==1.0.3
-numpy==1.16
+numpy==1.16.6
 tensorflow==2.3.2
 keras==2.4.3
 deepchem==2.4.0
