@@ -15,5 +15,5 @@ dependencies:
         - keras==2.4.3
         - deepchem==2.4.0
         - mordred
-        - scikit-learn==0.22.2.post1
+        - scikit-learn
         
