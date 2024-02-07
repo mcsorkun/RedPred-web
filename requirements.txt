@@ -7,3 +7,4 @@ numpy==1.16.6
 tensorflow==2.3.2
 keras==2.4.3
 deepchem==2.4.0
+protobuf~=3.19.0
