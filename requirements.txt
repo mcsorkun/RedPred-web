@@ -1,4 +1,4 @@
-streamlit==1.22.0
+streamlit
 rdkit==2022.9.1
 scikit-learn==0.22.1
 mordred==1.2.0
