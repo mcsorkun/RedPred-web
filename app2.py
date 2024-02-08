@@ -134,7 +134,7 @@ def get_ecfc(smiles_list, radius=2, nBits=2048, useCounts=True):
 #st.beta_set_page_config(page_title="AqSolPred: Online Solubility Prediction Tool")
 
 
-st.write("""# RedPred: Redox Energy Prediction Tool """)
+st.write("""# RedPred(lite): Redox Energy Prediction Tool """)
 
 image = Image.open('image1.jpg')
 st.image(image, use_column_width=True)
@@ -348,7 +348,9 @@ about_part = st.expander("About RedPred", expanded=False)
 with about_part:
     st.write('''
 	     #### About
-	     RedPred is an reaction energy prediction model for redox flow battery molecules that consists ensemble of 3 ML algorithms (Graph Conv Neural Nets, Deep Neural Nets, and Random Forest). 
+	     RedPred is a 2-electron 2-proton reaction energy prediction model for redox flow battery molecules. 
+
+	     Web-tool (lite) only contains RF model predictions. For full version please use the code from the [GitHub Repo](https://github.com/mcsorkun/RedPred)
 	     
 	     You can upload or type your SMILES used as a reactant in the redox reaction to get the reaction energy (Hartree).
 	     
@@ -365,8 +367,8 @@ with about_part:
 	     #### Developers
 
 	     - [Murat Cihan Sorkun](https://www.linkedin.com/in/murat-cihan-sorkun/)
-	     - [Cihan Yatbaz] (https://www.linkedin.com/in/cihanyatbaz/)
-	     - [Elham Nour Ghassemi] (https://www.linkedin.com/in/elhamnourghassemi/)
+	     - [Cihan Yatbaz](https://www.linkedin.com/in/cihanyatbaz/)
+	     - [Elham Nour Ghassemi](https://www.linkedin.com/in/elhamnourghassemi/)
 
 	''')
 
