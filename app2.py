@@ -47,21 +47,21 @@ from tensorflow.keras.layers import Dropout
 # Function to create model, required for KerasClassifier
 
 
-def create_model(optimizer='RMSprop', learn_rate=0.1, momentum=0.4, activation='sigmoid', dropout_rate=0.0):
+# def create_model(optimizer='RMSprop', learn_rate=0.1, momentum=0.4, activation='sigmoid', dropout_rate=0.0):
     
-    keras_model = Sequential()
-    keras_model.add(Dense(128, input_dim=train_encoded.shape[1], activation=activation))
-    keras_model.add(Dropout(dropout_rate))
-    keras_model.add(Dense(32, activation=activation)) 
-    keras_model.add(Dropout(dropout_rate))
-    keras_model.add(Dense(8,activation=activation)) 
-    keras_model.add(Dropout(dropout_rate))
-    keras_model.add(Dense(1,activation='linear'))
-    keras_model.summary()
-    # Compile model
-    keras_model.compile(loss='mean_squared_error', optimizer=optimizer)
+#     keras_model = Sequential()
+#     keras_model.add(Dense(128, input_dim=train_encoded.shape[1], activation=activation))
+#     keras_model.add(Dropout(dropout_rate))
+#     keras_model.add(Dense(32, activation=activation)) 
+#     keras_model.add(Dropout(dropout_rate))
+#     keras_model.add(Dense(8,activation=activation)) 
+#     keras_model.add(Dropout(dropout_rate))
+#     keras_model.add(Dense(1,activation='linear'))
+#     keras_model.summary()
+#     # Compile model
+#     keras_model.compile(loss='mean_squared_error', optimizer=optimizer)
 
-    return keras_model
+#     return keras_model
 
 
 ######################
@@ -191,34 +191,34 @@ ecfc_encoder = get_ecfc(SMILES)
 #Import pretrained models
 
 #222222222222222
-# #---------------------------------------------------------------------------------
-# ### generate dataset from SMILES and function generate
-# generated_dataset = generate(SMILES)
+#---------------------------------------------------------------------------------
+### generate dataset from SMILES and function generate
+generated_dataset = generate(SMILES)
 
-# ### transformer for gcn 
-# filename = 'final_models/transformers.pkl'
-# infile = open(filename,'rb')
-# transformers = pickle.load(infile)
-# infile.close()
-
-
-# ## model for gcn 
-# model_dir = 'final_models/tf_chp_initial'
-# gcne_model = dc.models.GraphConvModel(n_tasks=1, batch_size=100, mode='regression', dropout=0.25,model_dir= model_dir,random_seed=0)
-# gcne_model.restore('final_models/tf_chp_initial/ckpt-94/ckpt-197')
-# #print(gcne_model)
+### transformer for gcn 
+filename = 'final_models/transformers.pkl'
+infile = open(filename,'rb')
+transformers = pickle.load(infile)
+infile.close()
 
 
-# ## predict energy from gcn model 
-# pred_gcne = gcne_model.predict(generated_dataset, transformers)
+## model for gcn 
+model_dir = 'final_models/tf_chp_initial'
+gcne_model = dc.models.GraphConvModel(n_tasks=1, batch_size=100, mode='regression', dropout=0.25,model_dir= model_dir,random_seed=0)
+gcne_model.restore('final_models/tf_chp_initial/ckpt-94/ckpt-197')
+#print(gcne_model)
+
+
+## predict energy from gcn model 
+pred_gcne = gcne_model.predict(generated_dataset, transformers)
 #222222222222222
 
 #---------------------------------------------------------------------------------
 ##keras model load
-from keras.models import model_from_json
+# from keras.models import model_from_json
 
-keras_final_model = model_from_json(open('./final_models/keras_final_model_architecture.json').read())
-keras_final_model.load_weights('./final_models/keras_final_model_weights.h5')
+# keras_final_model = model_from_json(open('./final_models/keras_final_model_architecture.json').read())
+# keras_final_model.load_weights('./final_models/keras_final_model_weights.h5')
 
 #keras_final_model = pickle.load(open(r'./final_models/keras_final_model.txt', "rb"))
 rf_final_model = pickle.load(open(r'./final_models/rf_final_model.txt', "rb"))
@@ -227,7 +227,7 @@ rf_final_model = pickle.load(open(r'./final_models/rf_final_model.txt', "rb"))
 
 
 #predict test data (Keras,RF, GCN)
-pred_keras = keras_final_model.predict(ecfc_encoder)   
+# pred_keras = keras_final_model.predict(ecfc_encoder)   
 pred_rf  = rf_final_model.predict(ecfc_encoder)
 
 ##reshape (n,)    ----> (n,1)
@@ -290,7 +290,7 @@ test2_mae.append(0.00799) # 3 - RF
 #### ????  array shape not correct and no difference with pred_consensus
 
 # pred_weighted = (pred_gcne + pred_keras + pred_rf_r)/3
-pred_weighted = (pred_keras + pred_rf_r)/2
+pred_weighted = (pred_gcne + pred_rf_r)/2
 
 
 
@@ -330,8 +330,8 @@ st.header('Individual Predictions')
 
 df_models = pd.DataFrame(SMILES, columns=['reactant_smiles'])
 
-# df_models["GCN"]=pred_gcne
-df_models["DNN"]=pred_keras
+df_models["GCN"]=pred_gcne
+# df_models["DNN"]=pred_keras
 df_models["RF"]=pred_rf
 df_models=df_models.round(5)
 
@@ -358,9 +358,9 @@ with about_part:
 	     
 	     If you are using the predictions from RedPred on your work, please cite these papers: [1, 2]
 
-	     [1] Sorkun, Elif, et al. (2021). [RedDB, a computational database of electroactive molecules for aqueous redox flow batteries.](https://chemrxiv.org/engage/chemrxiv/article-details/60c7575f469df44a40f45465)
+	     [1] Sorkun, Elif, et al. (2021). [RedDB, a computational database of electroactive molecules for aqueous redox flow batteries.](https://www.nature.com/articles/s41597-022-01832-2)
 	     
-	     [2] In preparation (will be updated soon)
+	     [2] Sorkun, M. C., Ghassemi, E. N., Yatbaz, C., Koelman, J. V. A., & Er, S. (2023). [RedPred, a machine learning model for the prediction of redox reaction energies of the aqueous organic electrolytes.](https://chemrxiv.org/engage/chemrxiv/article-details/6467754bfb40f6b3eed6e874)
 
 	     #### Developers
 
