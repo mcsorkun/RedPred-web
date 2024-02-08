@@ -290,7 +290,7 @@ test2_mae.append(0.00799) # 3 - RF
 #### ????  array shape not correct and no difference with pred_consensus
 
 # pred_weighted = (pred_gcne + pred_keras + pred_rf_r)/3
-pred_weighted = (pred_gcne + pred_rf_r)/2
+# pred_weighted = (pred_gcne + pred_rf_r)/2
 pred_weighted = pred_rf_r
 
 
