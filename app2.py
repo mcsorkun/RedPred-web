@@ -111,18 +111,18 @@ def get_ecfc(smiles_list, radius=2, nBits=2048, useCounts=True):
 
 
 #111111111111
-# ## generate dataset it is diffrent from origin one  
-# import deepchem as dc
-# from deepchem.models import GraphConvModel
+## generate dataset it is diffrent from origin one  
+import deepchem as dc
+from deepchem.models import GraphConvModel
 
-# def generate(SMILES, verbose=False):
+def generate(SMILES, verbose=False):
 
-#     featurizer = dc.feat.ConvMolFeaturizer()
-#     gcn = featurizer.featurize(SMILES)
-#     properties = [random.randint(-1,1)/100  for i in range(0,len(SMILES))]
-#     dataset = dc.data.NumpyDataset(X=gcn, y=np.array(properties))
+    featurizer = dc.feat.ConvMolFeaturizer()
+    gcn = featurizer.featurize(SMILES)
+    properties = [random.randint(-1,1)/100  for i in range(0,len(SMILES))]
+    dataset = dc.data.NumpyDataset(X=gcn, y=np.array(properties))
     
-#     return dataset
+    return dataset
 #111111111111
 
 ######################
