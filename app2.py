@@ -30,17 +30,17 @@ from sklearn.ensemble import RandomForestRegressor
 #For KERAS
 import random
 import numpy as np
-from keras.wrappers.scikit_learn import KerasRegressor
+# from keras.wrappers.scikit_learn import KerasRegressor
 from sklearn.metrics import mean_squared_error
 import time
 
 import numpy
 from sklearn.model_selection import GridSearchCV
 
-import tensorflow 
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import Dropout
+# import tensorflow 
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.layers import Dense
+# from tensorflow.keras.layers import Dropout
 
 #from keras.layers import Dense
 #from keras.layers import Dropout
@@ -111,18 +111,18 @@ def get_ecfc(smiles_list, radius=2, nBits=2048, useCounts=True):
 
 
 #111111111111
-## generate dataset it is diffrent from origin one  
-import deepchem as dc
-from deepchem.models import GraphConvModel
+# ## generate dataset it is diffrent from origin one  
+# import deepchem as dc
+# from deepchem.models import GraphConvModel
 
-def generate(SMILES, verbose=False):
+# def generate(SMILES, verbose=False):
 
-    featurizer = dc.feat.ConvMolFeaturizer()
-    gcn = featurizer.featurize(SMILES)
-    properties = [random.randint(-1,1)/100  for i in range(0,len(SMILES))]
-    dataset = dc.data.NumpyDataset(X=gcn, y=np.array(properties))
+#     featurizer = dc.feat.ConvMolFeaturizer()
+#     gcn = featurizer.featurize(SMILES)
+#     properties = [random.randint(-1,1)/100  for i in range(0,len(SMILES))]
+#     dataset = dc.data.NumpyDataset(X=gcn, y=np.array(properties))
     
-    return dataset
+#     return dataset
 #111111111111
 
 ######################
@@ -193,25 +193,25 @@ ecfc_encoder = get_ecfc(SMILES)
 #222222222222222
 #---------------------------------------------------------------------------------
 ### generate dataset from SMILES and function generate
-generated_dataset = generate(SMILES)
+# generated_dataset = generate(SMILES)
 
-### transformer for gcn 
-filename = 'final_models/transformers.pkl'
-infile = open(filename,'rb')
-transformers = pickle.load(infile)
-infile.close()
-
-
-## model for gcn 
-model_dir = 'final_models/tf_chp_initial'
-gcne_model = dc.models.GraphConvModel(n_tasks=1, batch_size=100, mode='regression', dropout=0.25,model_dir= model_dir,random_seed=0)
-gcne_model.restore('final_models/tf_chp_initial/ckpt-94/ckpt-197')
-#print(gcne_model)
+# ### transformer for gcn 
+# filename = 'final_models/transformers.pkl'
+# infile = open(filename,'rb')
+# transformers = pickle.load(infile)
+# infile.close()
 
 
-## predict energy from gcn model 
-pred_gcne = gcne_model.predict(generated_dataset, transformers)
-#222222222222222
+# ## model for gcn 
+# model_dir = 'final_models/tf_chp_initial'
+# gcne_model = dc.models.GraphConvModel(n_tasks=1, batch_size=100, mode='regression', dropout=0.25,model_dir= model_dir,random_seed=0)
+# gcne_model.restore('final_models/tf_chp_initial/ckpt-94/ckpt-197')
+# #print(gcne_model)
+
+
+# ## predict energy from gcn model 
+# pred_gcne = gcne_model.predict(generated_dataset, transformers)
+# #222222222222222
 
 #---------------------------------------------------------------------------------
 ##keras model load
@@ -291,7 +291,7 @@ test2_mae.append(0.00799) # 3 - RF
 
 # pred_weighted = (pred_gcne + pred_keras + pred_rf_r)/3
 pred_weighted = (pred_gcne + pred_rf_r)/2
-
+pred_weighted = pred_rf_r
 
 
 
@@ -326,16 +326,16 @@ linko= f'<a href="data:file/csv;base64,{b64}" download="redpred_predictions.csv"
 st.markdown(linko, unsafe_allow_html=True)
  
 
-st.header('Individual Predictions')
+# st.header('Individual Predictions')
 
-df_models = pd.DataFrame(SMILES, columns=['reactant_smiles'])
+# df_models = pd.DataFrame(SMILES, columns=['reactant_smiles'])
 
-df_models["GCN"]=pred_gcne
-# df_models["DNN"]=pred_keras
-df_models["RF"]=pred_rf
-df_models=df_models.round(5)
+# df_models["GCN"]=pred_gcne
+# # df_models["DNN"]=pred_keras
+# df_models["RF"]=pred_rf
+# df_models=df_models.round(5)
 
-df_models # Skips the dummy first item
+# df_models # Skips the dummy first item
 
 
 
