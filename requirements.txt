@@ -1,6 +1,6 @@
 rdkit
 mordredcommunity
 pandas
-scikit-learn==0.24.x
+scikit-learn==0.24.0
 streamlit
 
